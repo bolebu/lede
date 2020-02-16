@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: 测试12
+name: 测试02
 
 on:
   push:
@@ -65,7 +65,7 @@ jobs:
           git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
           git clone https://github.com/rosywrt/luci-theme-rosy.git
           git clone https://github.com/tty228/luci-app-serverchan.git
-          git clone https://github.com/Lienol/openwrt-package.git
+          git clone https://github.com/hong0980/luci-app-passwall.git
 
       - name: Costom configure file
         run: |
@@ -173,7 +173,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
           CONFIG_PACKAGE_luci-app-koolproxyR=y
           CONFIG_PACKAGE_luci-app-serverchan=y
-          CONFIG_PACKAGE_openwrt-package=y
+          CONFIG_PACKAGE_luci-app-passwall=y
           CONFIG_PACKAGE_luci-app-clamav=y
           EOF
 
