@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: 博乐埠
+name: 博乐卜
 
 on:
   push:
