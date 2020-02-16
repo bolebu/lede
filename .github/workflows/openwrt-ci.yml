@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: 失败
+name: 测试
 
 on:
   push:
@@ -56,17 +56,11 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           
-          
       - name: 同步最新的源码
         run: |
           git remote add openwrt https://github.com/coolsnowwolf/lede.git
           git pull openwrt master
           git remote -v
-
-      - name: Update feeds
-        run: |
-          ./scripts/feeds update -a
-          ./scripts/feeds install -a
           
       - name: 博乐埠
         run: |
@@ -186,6 +180,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-koolproxyR=y
           CONFIG_PACKAGE_luci-app-serverchan=y
           CONFIG_PACKAGE_openwrt-package=y
+          CONFIG_PACKAGE_luci-app-clamav=y
           EOF
 
           # LuCI主题:
